@@ -1,5 +1,7 @@
 #include "binary_trees.h"
 
+size_t binary_tree_height(const binary_tree_t *tree);
+
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect
  *
@@ -9,23 +11,23 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	binary_tree_t *is_perfect;
-	size_t checks = 0;
+    binary_tree_t *is_perfect;
+    size_t checks = 0;
 
-	if (tree == NULL)
-	{
-		return (0);
-	}
+    if (tree == NULL)
+    {
+        return (0);
+    }
 
-	is_perfect = tree->left;
+    is_perfect = tree->left;
 
-	while (is_perfect)
-	{
-		is_perfect = is_perfect->left;
-		++checks;
-	}
+    while (is_perfect)
+    {
+        is_perfect = is_perfect->left;
+        ++checks;
+    }
 
-	return (binary_tree_height(tree) == checks);
+    return (binary_tree_height(tree) == checks);
 }
 
 /*File: 14-binary_tree_balance.c */
@@ -39,17 +41,17 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	int height_1, height_2;
+    int height_1, height_2;
 
-	if (tree == NULL)
-	{
-		return (0);
-	}
+    if (tree == NULL)
+    {
+        return (0);
+    }
 
-	else
-	{
-		height_1 = 1 + binary_tree_height(tree->left);
-		height_2 = 1 + binary_tree_height(tree->right);
-		return (height_1 > height_2 ? height_1 : height_2);
-	}
+    else
+    {
+        height_1 = 1 + binary_tree_height(tree->left);
+        height_2 = 1 + binary_tree_height(tree->right);
+        return (height_1 > height_2 ? height_1 : height_2);
+    }
 }
