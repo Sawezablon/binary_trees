@@ -5,7 +5,7 @@
  *
  * @node: pointer to the node to find the uncle
  *
- * Return: must return a pointer to the sibling node
+ * Return: must return a pointer to the sibling node,
  * If node is NULL or the parent is NULL, return NULL
  * If node has no sibling, return NULL
 */
@@ -16,8 +16,9 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 		return (NULL);
 	}
 
-	binary_tree_t *uncle = node->parent->parent;
+	binary_tree_t *uncle;
 
+	uncle = node->parent->parent;
 	if (uncle->left == node->parent)
 	{
 		return (uncle->right);
