@@ -9,19 +9,20 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	binary_tree_t *is_perfect;
+	size_t checks;
+
 	if (tree == NULL)
 	{
 		return (0);
 	}
 
-	binary_tree_t *is_perfect;
-	size_t checks;
-
-	is_perfect = tree->left;
-	while (is_perfect)
+	else
 	{
-		is_perfect = is_perfect->left;
-		++checks;
+		for (is_perfect = tree->left; is_perfect; is_perfect = is_perfect->left)
+		{
+			++checks;
+		}
 	}
 
 	return (binary_tree_height(tree) == checks);
