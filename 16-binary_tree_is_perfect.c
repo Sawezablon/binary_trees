@@ -10,7 +10,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 {
 	if (tree)
 	{
-		int height_1, height_2;
+		int height_1 = 0, height_2 = 0;
 
 		if (tree->right)
 		{
@@ -66,7 +66,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t binary_tree, is_perfect;
+	size_t binary_tree = 0, is_perfect = 0;
 
 	if (tree == NULL)
 	{
