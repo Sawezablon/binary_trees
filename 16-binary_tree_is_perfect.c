@@ -9,23 +9,23 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	binary_tree_t *is_perfect;
+	size_t perfect = 0;
 	size_t checks = 0;
 
 	if (tree == NULL)
 	{
 		return (0);
 	}
-
-	is_perfect = tree->left;
-
-	while (is_perfect)
+	checks = binary_tree_height(tree);
+	perfect = (1 << (checks + 1)) - 1;
+	if (perfect == binary_tree_size(tree))
 	{
-		is_perfect = is_perfect->left;
-		++checks;
+		return (1);
 	}
-
-	return (binary_tree_height(tree) == checks);
+	else
+	{
+		return (0);
+	}
 }
 
 /* File: 14-binary_tree_balance.c */
