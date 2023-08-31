@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 
+void sata_helper(avl_t **root, int *array, size_t lo, size_t hi);
 /**
  * sorted_array_to_avl - builds an AVL tree from an array
  * @array: a pointer to the first element of the array to be converted
