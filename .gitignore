@@ -44,3 +44,5 @@ binary_tree_print.c
 110-is_bst
 114-main.c
 114-bst_rm
+*main.c
+120-is_avl
