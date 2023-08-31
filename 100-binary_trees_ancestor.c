@@ -4,8 +4,7 @@
  * binary_trees_ancestor - function that finds the lowest common ancestor
  * @first: parameter
  * @second: parameter
- * Return: If no common ancestor was found, 
- *	   your function must return NULL
+ * Return: If no common ancestor was found, your function must return NULL
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				     const binary_tree_t *second)
