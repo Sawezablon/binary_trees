@@ -40,32 +40,20 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	if (tree)
-	{
-		int height_1 = 0; 
-		int height_2 = 0;
+	int height_1, height_2;
 
-		if (tree->right)
-		{
-			height_2 = 1 + binary_tree_height(tree->right);
-		}
-		if (tree->left)
-		{
-			height_1 = 1 + binary_tree_height(tree->left);
-		}
-		if (height_1 > height_2)
-		{
-			return (height_1);
-		}
-		else
-		{
-			return (height_2);
-		}
-	}
-	else
+	if (tree == NULL)
 	{
 		return (0);
 	}
+
+	else
+	{
+		height_1 = 1 + binary_tree_height(tree->left);
+		height_2 = 1 + binary_tree_height(tree->right);
+		return (height_1 > height_2 ? height_1 : height_2);
+	}
+
 }
 
 /* File: 11-binary_tree_size.c */
